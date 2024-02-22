@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "framewords": "vite",
+  "rewrites": [
+    {
+      "source": "/api/:(.*)",
+      "destination": "/api/server.js"
+    }
+  ]
+}
