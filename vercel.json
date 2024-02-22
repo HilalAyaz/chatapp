@@ -1,6 +1,6 @@
 {
   "builds": [
-    { "src": "backend/server.js", "use": "@now/node" },
+    { "src": "backend/server.js", "use": "@vercel/node" },
     { "src": "frontend", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
   ],
   "routes": [
