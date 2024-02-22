@@ -11,15 +11,11 @@
         "distDir": "dist",
         "includeFiles": ["package.json", "package-lock.json"]
       },
-      "build": "npm run build --prefix frontend",
-      "routes": [{ "src": "/(.*)", "dest": "frontend/dist/$1" }]
+      "build": "npm run build:frontend"
     }
   ],
-  "routes": [{ "src": "/api/(.*)", "dest": "/backend/server.js" }],
-  "functions": {
-    "postinstall": {
-      "runtime": "vercel-node@0.10.0",
-      "handler": "index.postinstall"
-    }
-  }
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/backend/server.js" },
+    { "src": "/(.*)", "dest": "/frontend/dist/$1" }
+  ]
 }
