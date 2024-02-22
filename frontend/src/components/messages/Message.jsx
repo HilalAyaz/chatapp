@@ -11,7 +11,7 @@ const Message = ({ message }) => {
   const profilePic = fromMe
     ? authUser.profilePic
     : selectedConversation?.profilePic;
-  const bubbleBgColor = fromMe ? "bg-blue-500" : "";
+  const bubbleBgColor = fromMe ? "bg-red-500" : "";
   const shakeMessage = message.shouldShake ? "animate-shake" : "";
 
   return (
