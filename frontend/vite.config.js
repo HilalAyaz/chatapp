@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': 'chatapp-backend-devdesigner.vercel.app'
+      '/api': 'https://chatapp-backend-devdesigner.vercel.app'
     }
   }
 })
