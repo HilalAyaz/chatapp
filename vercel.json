@@ -1,7 +1,18 @@
 {
   "builds": [
-    { "src": "backend/server.js", "use": "@vercel/node" },
-    { "src": "frontend", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist",
+        "includeFiles": ["package.json", "package-lock.json"]
+      },
+      "install": "npm ci --prefix frontend"
+    }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/backend/server.js" },
