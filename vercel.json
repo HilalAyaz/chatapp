@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": ".*",
+      "dest": "./frontend/dist/index.html"
+    }
+  ],
+  "builds": [{ "src": "./backend/server.js", "use": "@vercel/node" }]
+}
