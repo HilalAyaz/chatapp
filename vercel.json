@@ -11,5 +11,15 @@
       "dest": "./frontend/dist/index.html"
     }
   ],
-  "builds": [{ "src": "./backend/server.js", "use": "@vercel/node" }]
+  "builds": [
+    { "src": "./backend/server.js", "use": "@vercel/node" },
+    {
+      "src": "./backend/server.js",
+      "use": "@now/node-server",
+      "config": {
+        "buildCommand": "npm install && npm run build --prefix frontend",
+        "outputDirectory": "frontend/dist"
+      }
+    }
+  ]
 }
